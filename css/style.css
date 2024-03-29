@@ -64,3 +64,38 @@ iframe {
 .text-bg-dark {
     padding-left: 0;
 }
+
+.main-div {
+    text-align: center;
+}
+
+.main-div a {
+    display: inline-block;
+    background-color: #240A34;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    width: 50%;
+    max-width: 300px; /* Limiting width to 50% of page width but no more than 300px */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-div a:hover {
+    background-color: #4A235A; /* Darken the color on hover */
+}
+.custom-btn {
+    display: block;
+    width: 50%;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #240A34;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.custom-btn:hover {
+    background-color: #4C1E5F;
+}
