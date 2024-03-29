@@ -66,39 +66,66 @@
             </div>
         </div>
         <br/>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/jTpI6MPuyik?si=-94be9Xbklsp7Sub" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div id="videoContainer1" class="video-container">
+            <iframe id="iframe1" width="560" height="315" src="https://www.youtube.com/embed/jTpI6MPuyik?si=-94be9Xbklsp7Sub" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/6zx7L6QvTrc?si=6zPDrwwueJsjGYCV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        <div id="videoContainer2" class="video-container">
+            <iframe id="iframe2" width="560" height="315" src="https://www.youtube.com/embed/6zx7L6QvTrc?si=6zPDrwwueJsjGYCV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/NAYLTCiUn38?si=hVnlHLJYx5-D88ZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        <div id="videoContainer3" class="video-container">
+            <iframe id="iframe3" width="560" height="315" src="https://www.youtube.com/embed/NAYLTCiUn38?si=hVnlHLJYx5-D88ZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/2unvky61qVk?si=iteq1uXXFDteuWC3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        <div id="videoContainer4" class="video-container">
+            <iframe id="iframe4" width="560" height="315" src="https://www.youtube.com/embed/2unvky61qVk?si=iteq1uXXFDteuWC3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div class="video-container">
-            <iframe id="videoPlayer" width="560" height="315" src="https://www.youtube.com/embed/lmn094K0avA?si=fH8Yab99J2FSCbYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        <div id="videoContainer5" class="video-container">
+            <iframe id="iframe5" width="560" height="315" src="https://www.youtube.com/embed/lmn094K0avA?si=fH8Yab99J2FSCbYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div class="video-container">
-            <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Forirazmusic%2Fvideos%2F229927541039814%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="false" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        
+        <div id="videoContainer6" class="video-container">
+            <iframe id="iframe6" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Forirazmusic%2Fvideos%2F229927541039814%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="false" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
         </div>
     </div>
+    <a href="#videoContainer1" class="btn btn-primary">Video 1</a>
+    <a href="#videoContainer2" class="btn btn-primary">Video 2</a>
+    <a href="#videoContainer3" class="btn btn-primary">Video 3</a>
+    <a href="#videoContainer4" class="btn btn-primary">Video 4</a>
+    <a href="#videoContainer5" class="btn btn-primary">Video 5</a>
+    <a href="#videoContainer6" class="btn btn-primary">Video 6</a>
+
     <script>
+        // Function to scroll to the specified video container
+        function scrollToVideo(containerID) {
+            const videoContainer = document.getElementById(containerID);
+            if (videoContainer) {
+                videoContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    
+        // Function to play the video
+        function playVideo() {
+            const iframe = document.getElementById('iframe5');
+            if (iframe) {
+                // Set the video ID from the query parameter
+                const urlParams = new URLSearchParams(window.location.search);
+                const videoID = urlParams.get('videoID');
+                if (videoID) {
+                    iframe.src = `https://www.youtube.com/embed/${videoID}?autoplay=1`;
+                }
+            }
+        }
+    
+        // Scroll to the specified video container and play the video when the page loads
         window.onload = function() {
-            // Parse the query parameter to get the video ID
             const urlParams = new URLSearchParams(window.location.search);
             const videoID = urlParams.get('videoID');
-    
             if (videoID) {
-                // If video ID is provided, set the src attribute of the iframe
-                const iframe = document.getElementById('videoPlayer');
-                iframe.src = `https://www.youtube.com/embed/${videoID}?autoplay=1`;
-    
-                // Scroll to the video position
-                const videoElement = document.getElementById('video');
-                videoElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                scrollToVideo('videoContainer5');
+                playVideo();
             }
         };
     </script>
