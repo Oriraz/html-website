@@ -61,7 +61,7 @@
           </div>
       </div>
       <div class="releases-container mt-4">
-          <h2>Releases</h2>
+          <h2>Discogs</h2>
           <div id="releases" class="list-group"></div>
           <div id="pagination" class="mt-3">
               <button id="prevPage" class="btn btn-outline-secondary" disabled>Previous</button>
@@ -97,8 +97,9 @@
                       data.releases.forEach(release => {
                           const releaseItem = document.createElement('a');
                           releaseItem.className = 'list-group-item list-group-item-action';
-                          releaseItem.href = `./release.html?id=${release.id}`;
+                          releaseItem.href = `https://www.discogs.com/release/${release.id}`;
                           releaseItem.textContent = `${release.title} (${release.year})`;
+                          releaseItem.target = '_blank'; // Open link in a new tab
                           releasesContainer.appendChild(releaseItem);
                       });
                       updatePaginationButtons(data.pagination);
