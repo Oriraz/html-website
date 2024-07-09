@@ -66,36 +66,48 @@ iframe {
 }
 
 .main-div {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.main-div a {
-    display: inline-block;
+.btn-custom {
     background-color: #240A34;
-    color: white;
-    padding: 10px 20px;
-    margin: 10px;
-    width: 50%;
-    max-width: 300px; /* Limiting width to 50% of page width but no more than 300px */
+    color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.main-div a:hover {
-    background-color: #4A235A; /* Darken the color on hover */
-}
-.custom-btn {
-    display: block;
+    text-align: center;
     width: 50%;
-    margin: 10px auto;
     padding: 10px;
-    text-align: center;
-    background-color: #240A34;
-    color: #ffffff;
-    text-decoration: none;
+    margin: 5px;
+    border-radius: 5px;
 }
 
-.custom-btn:hover {
-    background-color: #4C1E5F;
+
+@media (max-width: 768px) {
+    .btn-custom {
+        width: 90%;
+    }
+}
+
+.news-bar {
+    overflow: hidden;
+    white-space: nowrap;
+    background: #000;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+}
+.news-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 10s linear infinite;
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
